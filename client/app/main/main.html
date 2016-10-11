@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Welcome!</h1>
+      <p>
+        Thanks for coming to the UGA Club Volleyball Fall Tournament.
+      </p>
+      <p>
+        You can find a list of team standings and match schedules under TEAMS.
+      </p>
+      <p>
+        The FINALS tab will show each team's position in the gold and silver bracket. This will be updated throughout the day.
+      </p>
+
+      <h1 class="page-header">Statistics</h1>
+      <p>
+        Total Points Today: {{totalPoints}}
+      </p>
+      <p>
+        Total Matches Today: {{totalMatches}}
+      </p>
+      <p>
+        Team with larget net points: {{totalMatches}}
+      </p>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
+        <li><a href="#">{{thing.name}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

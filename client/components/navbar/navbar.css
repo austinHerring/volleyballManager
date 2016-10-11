@@ -1,0 +1,11 @@
+.logo {
+  height: 50px;
+}
+
+.navbar-default {
+  background-color: #2e6da4;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
