@@ -27,9 +27,8 @@ export class TeamEditComponent {
   }
 
   deleteTeam() {
-    var c = confirm("Delete this?");
-    if (c == true)
-    {
+    var c = confirm('Delete this?');
+    if (c === true) {
       this.$http.delete('/api/teams/' + this.team._id);
       this.$state.go('teams');
     }
@@ -45,7 +44,7 @@ export class TeamEditComponent {
   // }
 
   saveTeam() {
-    if(this.team) {
+    if (this.team) {
       this.$http.put('/api/teams/' + this.team._id, this.team);
       this.$state.go('teams');
     }
