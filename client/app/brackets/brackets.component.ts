@@ -8,7 +8,7 @@ import routes from './brackets.routes';
 export class BracketsComponent {
   /*@ngInject*/
   constructor() {
-    this.message = 'Hello';
+    //this.message = 'Hello';
   }
 }
 
