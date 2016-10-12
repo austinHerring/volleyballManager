@@ -11,10 +11,10 @@ Team.find({}).remove()
   .then(() => {
     Team.create({
       name: 'UGA',
-      rank: '1'
+      rank: 2
     }, {
       name: 'GT',
-      info: '2'
+      rank: 1
     });
   });
 

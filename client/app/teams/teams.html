@@ -1,36 +1,18 @@
 <div class="col-md-12">
   <h1>Teams</h1>
-  <button ng-show="teamsCtrl.isLoggedIn()" class="btn btn-primary btn-fill" ng-click="teamsCtrl.addNewTeam()">Add Team</button>
+  <button ng-show="teamsCtrl.isLoggedIn()" class="btn btn-primary col-sm-12" ui-sref="teamAdd">Add Team</button>
   <table class="table table-striped">
     <thead>
       <th>Name</th>
       <th>Rank</th>
-      <th>Action</th>
+      <th ng-show="teamsCtrl.isLoggedIn()">Action</th>
     </thead>
     <tbody>
       <tr ng-repeat="team in teamsCtrl.teams">
-        <td ng-hide="team.edit">{{team.name}}</td>
-        <td ng-show="team.edit"><input type="text" ng-model="team.name"></td>
-
-        <td ng-hide="team.edit">{{team.rank}}</td>
-        <td ng-show="team.edit"><input type="text" ng-model="team.rank"></td>
-
-        <td ng-hide="team.edit">
-          <button class="btn btn-success" ng-click="teamsCtrl.toggleEdit($index)">Edit</button>
-          <button class="btn btn-danger" ng-click="teamsCtrl.deleteTeam($index)">Delete</button>
-        </td>
-        <td ng-show="team.edit">
-          <button class="btn btn-primary" ng-click="teamsCtrl.saveTeam($index)">Save</button>
-          <button class="btn btn-danger" ng-click="teamsCtrl.toggleEdit($index)">Cancel</button>
-        </td>
+        <td>{{team.name}}</td>
+        <td>{{team.rank}}</td>
+        <td><button class="btn btn-warning" ng-show="teamsCtrl.isLoggedIn()" ui-sref="teamEdit({teamId: team._id})">Edit</button></td>
       </tr>
     </tbody>
-    <tr>
-      <td><input type="text" ng-model="teamsCtrl.newTeam.name"></td>
-      <td><input type="text" ng-model="teamsCtrl.newTeam.rank"></td>
-      <td>
-        <button class="btn btn-primary" ng-click="teamsCtrl.addNewTeam()">Add Team</button>
-      </td>
-    </tr>
   </table>
 </div>

@@ -18,6 +18,8 @@ import _Auth from '../components/auth/auth.module';
 import account from './account';
 import admin from './admin';
 import teams from './teams/teams.component';
+import teamAdd from './teamAdd/teamAdd.component';
+import teamEdit from './teamEdit/teamEdit.component';
 import pools from './pools/pools.component';
 import brackets from './brackets/brackets.component';
 import navbar from '../components/navbar/navbar.component';
@@ -45,9 +47,15 @@ angular.module('volleyballManagerApp', [
   navbar,
   footer,
   main,
+
   pools,
+
   teams,
+  teamAdd,
+  teamEdit,
+
   brackets,
+
   constants,
 
   util
