@@ -16,16 +16,13 @@ export class TeamsComponent {
     this.$http = $http;
     this.Auth = Auth;
 
+    $http.get('/api/teams').then(response => {
+      this.teams = response.data;
+    });
   }
 
   isLoggedIn() {
     return this.Auth.isLoggedInSync();
-  }
-
-  $onInit() {
-    this.$http.get('/api/teams').then(response => {
-      this.teams = response.data;
-    });
   }
 }
 

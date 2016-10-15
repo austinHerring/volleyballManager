@@ -1,6 +1,6 @@
 <div class="col-md-12">
-  <h1>New Team</h1>
-  <h2>Name</h2>
-  <input type="text" ng-model="teamAddCtrl.newTeam.name">
-  <button class="btn btn-success btn-fill" ng-click="teamAddCtrl.addNewTeam()">Add Team</button>
+  <h1 class="page-header">New Team</h1>
+  <input type="text" class="btn-block" placeholder="Team Name" ng-model="teamAddCtrl.newTeam.name">
+  <button class="btn btn-success btn-block" ng-click="teamAddCtrl.addNewTeam()">Add Team</button>
+  <button class="btn btn-block btn-default col-sm-6" ui-sref="teams">Cancel</button>
 </div>

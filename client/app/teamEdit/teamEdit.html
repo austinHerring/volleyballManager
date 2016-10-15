@@ -1,8 +1,7 @@
-<div class="col-md-12">
-  <h1>Edit Team</h1>
-  <h2>Name</h2>
-  <input type="text" ng-model="teamEditCtrl.team.name">
-  <button class="btn btn-success col-sm-12" ng-click="teamEditCtrl.saveTeam()">Save</button>
-  <button class="btn btn-danger col-sm-6" ng-click="teamEditCtrl.deleteTeam()">Delete</button>
-  <button class="btn btn-primary col-sm-6" ui-sref="teams">Cancel</button>
+<div class="col-sm-12">
+  <h1 class="page-header">Edit Team</h1>
+  <input type="text" placeholder="Team Name" class="btn-block col-sm-12" ng-model="teamEditCtrl.team.name">
+  <button class="btn btn-block btn-success col-sm-12" ng-click="teamEditCtrl.saveTeam()">Save</button>
+  <button class="btn btn-block btn-danger col-sm-6" ng-click="teamEditCtrl.deleteTeam()">Delete</button>
+  <button class="btn btn-block btn-default col-sm-6" ui-sref="teams">Cancel</button>
 </div>

@@ -1,0 +1,37 @@
+<div class="col-sm-12">
+  <h1 class="page-header">Edit Match</h1>
+
+  <input type="text" placeholder="Time" class="btn-block col-sm-12" ng-model="matchEditCtrl.match.time">
+  <select ng-model="matchEditCtrl.choice1" ng-options="team.name for team in matchEditCtrl.allTeams" class="btn-block col-sm-12" ng-change="poolDetailCtrl.update()">
+  </select>
+  <select ng-model="matchEditCtrl.choice2" ng-options="team.name for team in matchEditCtrl.allTeams" class="btn-block col-sm-12" ng-change="poolDetailCtrl.update()">
+  </select>
+
+  <table>
+    <tr>
+      <td><input type="number" placeholder="Set 1" ng-model="matchEditCtrl.t1s1"></td>
+      <td><input type="number" placeholder="Set 1" ng-model="matchEditCtrl.t2s1"></td>
+    </tr>
+    <tr>
+      <td><input type="number" placeholder="Set 2" ng-model="matchEditCtrl.t1s2"></td>
+      <td><input type="number" placeholder="Set 2" ng-model="matchEditCtrl.t2s2"></td>
+    </tr>
+    <tr>
+      <td><input type="number" placeholder="Set 3" ng-model="matchEditCtrl.t1s3"></td>
+      <td><input type="number" placeholder="Set 3" ng-model="matchEditCtrl.t2s3"></td>
+    </tr>
+    <tr>
+      <td><input type="number" placeholder="Set 4" ng-model="matchEditCtrl.t1s4"></td>
+      <td><input type="number" placeholder="Set 4" ng-model="matchEditCtrl.t2s4"></td>
+    </tr>
+    <tr>
+      <td><input type="number" placeholder="Set 5" ng-model="matchEditCtrl.t1s5"></td>
+      <td><input type="number" placeholder="Set 5" ng-model="matchEditCtrl.t2s5"></td>
+    </tr>
+  </table>
+
+  <button class="btn btn-block btn-success col-sm-12" ng-click="matchEditCtrl.saveMatch()">Save</button>
+  <button class="btn btn-block btn-danger col-sm-6" ng-click="matchEditCtrl.deleteTeam()">Delete</button>
+  <button class="btn btn-block btn-default col-sm-6" ui-sref="poolDetail({poolId: matchEditCtrl.match.poolId})">Cancel</button>
+</div>
+

@@ -1,0 +1,64 @@
+<div class="col-sm-12">
+  <!-- Admin View -->
+  <div ng-show="poolDetailCtrl.isLoggedIn()" class="col-sm-12">
+    <input class="col-sm-12 btn-block" type="text" placeholder="Name / Court #" ng-model="poolDetailCtrl.pool.name">
+    <input type="text" placeholder="Time" class="btn-block col-sm-12" ng-model="poolDetailCtrl.time">
+
+    <select ng-model="poolDetailCtrl.choice1" ng-options="team.name for team in poolDetailCtrl.unselectedTeams" class="btn-block col-sm-12" ng-change="poolDetailCtrl.update()">
+    </select>
+
+    <select ng-model="poolDetailCtrl.choice2" ng-options="team.name for team in poolDetailCtrl.unselectedTeams" class=" btn-block col-sm-12" ng-change="poolDetailCtrl.update()">
+    </select>
+
+    <button class="btn btn-block btn-primary" class="col-sm-12" ng-click="poolDetailCtrl.addNewMatch()">Add Match</button>
+
+    <table class="table">
+      <tr ng-repeat="match in poolDetailCtrl.matches" ui-sref="matchEdit({matchId: match._id})">
+        <td style="padding-top:20px;padding-bottom:60px">
+          <table class="table table-striped table-hover">
+            <thead>
+            <th width="37.5%" class="text-right">{{match.fetchTeam1}}</th>
+            <th width="25%" class="text-center">{{match.time}}</th>
+            <th width="37.5%" class="text-left">{{match.fetchTeam2}}</th>
+            </thead>
+            <tbody>
+            <tr colspan="3" ng-repeat="set in match.sets">
+              <td>{{set.team1Score}}   -   {{set.team2Score}}</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <button class="btn btn-block btn-success col-sm-12">Save All</button>
+    <button class="btn btn-block btn-danger col-sm-12">Delete Pool</button>
+    <button class="btn btn-block btn-default col-sm-6" ui-sref="pools">Back</button>
+  </div>
+
+  <!-- User View -->
+  <div ng-hide="poolDetailCtrl.isLoggedIn()" class="col-sm-12">
+    <h1  class="page-header">{{poolDetailCtrl.pool.name}}</h1>
+
+    <!--<img src="assets/images/logo.png" />-->
+    <table class="table">
+      <tr ng-repeat="match in poolDetailCtrl.matches">
+        <td style="padding-top:20px;padding-bottom:60px">
+          <table class="table table-striped">
+            <thead>
+            <th width="37.5%" class="text-right">{{match.fetchTeam1}}</th>
+            <th width="25%" class="text-center">{{match.time}}</th>
+            <th width="37.5%" class="text-left">{{match.fetchTeam2}}</th>
+            </thead>
+            <tbody>
+            <tr colspan="3" ng-repeat="set in match.sets">
+              <td>{{set.team1Score}}   -   {{set.team2Score}}</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <button class="btn btn-block btn-default col-sm-6" ui-sref="pools">Back</button>
+  </div>
+
+
+</div>

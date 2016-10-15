@@ -46,6 +46,7 @@
 @import 'admin/admin.css';
 @import 'brackets/brackets.css';
 @import 'main/main.css';
+@import 'matchEdit/matchEdit.css';
 @import 'pools/pools.css';
 @import 'teams/teams.css';
 @import '../components/footer/footer.css';

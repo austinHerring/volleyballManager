@@ -1,1 +1,12 @@
-<div>This is the pools view.</div>
+<div class="col-md-12">
+  <h1 class="page-header">Pools</h1>
+  <input class="col-sm-8" ng-show="poolsCtrl.isLoggedIn()" placeholder="Name / Court #" type="text" ng-model="poolsCtrl.newPool.name">
+  <button class="btn btn-success col-sm-4" ng-show="poolsCtrl.isLoggedIn()" ng-click="poolsCtrl.addNewPool()">Add Pool</button>
+  <table class="table table-striped table-hover">
+    <tbody>
+    <tr ng-repeat="pool in poolsCtrl.pools" ui-sref="poolDetail({poolId: pool._id})">
+      <td>{{pool.name}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
