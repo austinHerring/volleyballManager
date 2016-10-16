@@ -4,14 +4,12 @@
   <table class="table table-striped table-hover"">
     <thead>
       <th>Name</th>
-      <th>Rank</th>
-      <!--<th ng-show="teamsCtrl.isLoggedIn()">Action</th>-->
+      <th>Record (W-L-T)</th>
     </thead>
     <tbody>
       <tr ng-repeat="team in teamsCtrl.teams" ui-sref="teamDetail({teamId: team._id})">
         <td>{{team.name}}</td>
-        <td>{{team.rank}}</td>
-        <!--<td><button class="btn btn-warning" ng-show="teamsCtrl.isLoggedIn()" ui-sref="teamEdit({teamId: team._id})">Edit</button></td>-->
+        <td>{{team.teamIdsWon.length}} - {{team.teamIdsLost.length}} - {{team.teamIdsTie.length}}</td>
       </tr>
     </tbody>
   </table>

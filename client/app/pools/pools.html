@@ -9,7 +9,7 @@
   <table class="table table-striped table-hover">
     <tbody>
     <tr ng-repeat="pool in poolsCtrl.pools" ui-sref="poolDetail({poolId: pool._id})">
-      <td>{{pool.name}}</td>
+      <td>{{pool.name}}<br/><i>&nbsp;{{pool.teamsList}}</i></td>
     </tr>
     </tbody>
   </table>

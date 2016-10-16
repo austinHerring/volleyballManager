@@ -7,5 +7,6 @@ export default class Team {
   poolId: String;
   teamIdsWon: [String];
   teamIdsLost: [String];
+  teamIdsTie: [String];
   matchIds: [String]
 }

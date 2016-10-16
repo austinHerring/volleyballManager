@@ -21,6 +21,30 @@ export class PoolsComponent {
   loadData() {
     this.$http.get('/api/pools').then(response => {
       this.pools = response.data;
+      this.$http.get('/api/matches').then(response => {
+        var allMatches = response.data;
+        var currentList = '';
+        for (let p of this.pools) {
+          for (let m of allMatches) {
+            if (m.poolId == p._id) {
+              if (!currentList.includes(m.fetchTeam1)) {
+                currentList += (currentList == '') ? m.fetchTeam1 : ', ' + m.fetchTeam1;
+              }
+              if (!currentList.includes(m.fetchTeam2)) {
+                currentList += (currentList == '') ? m.fetchTeam2 : ', ' + m.fetchTeam2;
+              }
+              if (!currentList.includes(m.fetchRef)) {
+                currentList += (currentList == '') ? m.fetchRef : ', ' + m.fetchRef;
+              }
+            }
+          }
+          p.teamsList = currentList;
+          currentList = '';
+        }
+      });
+      for (let p of this.pools) {
+        p.teamsList = "UGA, TENN"
+      }
     });
   }
 

@@ -18,22 +18,25 @@
       </tr>
       <tr>
         <td colspan="2">
-          <div class="btn-block" uib-timepicker ng-model="poolDetailCtrl.time"  hour-step="1" minute-step="5"></div>
+          <div uib-timepicker ng-model="poolDetailCtrl.time" hour-step="1" minute-step="5"></div>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <select ng-model="poolDetailCtrl.choiceRef" ng-options="team.name for team in poolDetailCtrl.unselectedTeams" class="matchEditTCell">
+          <select ng-model="poolDetailCtrl.choiceRef" ng-options="team.name for team in poolDetailCtrl.unselectedTeams" class="form-control">
+            <option value="" disabled selected>Referee</option>
           </select>
         </td>
       </tr>
       <tr>
         <td>
-          <select ng-model="poolDetailCtrl.choice1" ng-options="team.name for team in poolDetailCtrl.unselectedTeams" class="matchEditTCell">
+          <select ng-model="poolDetailCtrl.choice1" ng-options="team.name for team in poolDetailCtrl.unselectedTeams" class="form-control">
+            <option value="" disabled selected>Team 1</option>
           </select>
         </td>
         <td>
-          <select ng-model="poolDetailCtrl.choice2" ng-options="team.name for team in poolDetailCtrl.unselectedTeams" class="matchEditTCell">
+          <select ng-model="poolDetailCtrl.choice2" ng-options="team.name for team in poolDetailCtrl.unselectedTeams" class="form-control">
+            <option value="" disabled selected>Team 2</option>
           </select>
         </td>
       </tr>
