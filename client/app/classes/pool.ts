@@ -7,6 +7,5 @@ export default class Pool {
 
   _id: String;
   name: String;
-  matchIds: [String];
   teamIds: [String]
 }

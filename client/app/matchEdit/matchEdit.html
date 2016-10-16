@@ -1,37 +1,70 @@
 <div class="col-sm-12">
   <h1 class="page-header">Edit Match</h1>
 
-  <input type="text" placeholder="Time" class="btn-block col-sm-12" ng-model="matchEditCtrl.match.time">
-  <select ng-model="matchEditCtrl.choice1" ng-options="team.name for team in matchEditCtrl.allTeams" class="btn-block col-sm-12" ng-change="poolDetailCtrl.update()">
-  </select>
-  <select ng-model="matchEditCtrl.choice2" ng-options="team.name for team in matchEditCtrl.allTeams" class="btn-block col-sm-12" ng-change="poolDetailCtrl.update()">
-  </select>
+  <div uib-timepicker ng-model="matchEditCtrl.match.time"  hour-step="1" minute-step="5"></div>
 
-  <table>
+  <table class="table">
+    <tbody>
     <tr>
-      <td><input type="number" placeholder="Set 1" ng-model="matchEditCtrl.t1s1"></td>
-      <td><input type="number" placeholder="Set 1" ng-model="matchEditCtrl.t2s1"></td>
+      <td colspan="2">
+        <select ng-init="matchEditCtrl.choiceRef = matchEditCtrl.choiceRef" ng-model="matchEditCtrl.choiceRef" ng-options="team.name for team in matchEditCtrl.allTeams" class="matchEditTCell">
+        </select>
+      </td>
     </tr>
     <tr>
-      <td><input type="number" placeholder="Set 2" ng-model="matchEditCtrl.t1s2"></td>
-      <td><input type="number" placeholder="Set 2" ng-model="matchEditCtrl.t2s2"></td>
+      <td>
+        <select ng-init="matchEditCtrl.choice1 = matchEditCtrl.choice1" ng-model="matchEditCtrl.choice1" ng-options="team.name for team in matchEditCtrl.allTeams" class="matchEditTCell">
+        </select>
+      </td>
+      <td>
+        <select ng-init="matchEditCtrl.choice2 = matchEditCtrl.choice2" ng-model="matchEditCtrl.choice2" ng-options="team.name for team in matchEditCtrl.allTeams" class="matchEditTCell">
+        </select>
+      </td>
     </tr>
-    <tr>
-      <td><input type="number" placeholder="Set 3" ng-model="matchEditCtrl.t1s3"></td>
-      <td><input type="number" placeholder="Set 3" ng-model="matchEditCtrl.t2s3"></td>
-    </tr>
-    <tr>
-      <td><input type="number" placeholder="Set 4" ng-model="matchEditCtrl.t1s4"></td>
-      <td><input type="number" placeholder="Set 4" ng-model="matchEditCtrl.t2s4"></td>
-    </tr>
-    <tr>
-      <td><input type="number" placeholder="Set 5" ng-model="matchEditCtrl.t1s5"></td>
-      <td><input type="number" placeholder="Set 5" ng-model="matchEditCtrl.t2s5"></td>
-    </tr>
+      <tr>
+        <td><input class="matchEditTCell form-control" type="number" placeholder="Set 1" ng-model="matchEditCtrl.points[0]"></td>
+        <td><input class="matchEditTCell form-control" type="number" placeholder="Set 1" ng-model="matchEditCtrl.points[1]"></td>
+      </tr>
+      <tr>
+        <td><input class="matchEditTCell form-control" type="number" placeholder="Set 2" ng-model="matchEditCtrl.points[2]"></td>
+        <td><input class="matchEditTCell form-control" type="number" placeholder="Set 2" ng-model="matchEditCtrl.points[3]"></td>
+      </tr>
+      <tr>
+        <td><input class="matchEditTCell form-control" type="number" placeholder="Set 3" ng-model="matchEditCtrl.points[4]"></td>
+        <td><input class="matchEditTCell form-control" type="number" placeholder="Set 3" ng-model="matchEditCtrl.points[5]"></td>
+      </tr>
+      <tr>
+        <td><input class="matchEditTCell form-control" type="number" placeholder="Set 4" ng-model="matchEditCtrl.points[6]"></td>
+        <td><input class="matchEditTCell form-control" type="number" placeholder="Set 4" ng-model="matchEditCtrl.points[7]"></td>
+      </tr>
+      <tr>
+        <td><input class="matchEditTCell form-control" type="number" placeholder="Set 5" ng-model="matchEditCtrl.points[8]"></td>
+        <td><input class="matchEditTCell form-control" type="number" placeholder="Set 5" ng-model="matchEditCtrl.points[9]"></td>
+      </tr>
+    </tbody>
   </table>
 
-  <button class="btn btn-block btn-success col-sm-12" ng-click="matchEditCtrl.saveMatch()">Save</button>
-  <button class="btn btn-block btn-danger col-sm-6" ng-click="matchEditCtrl.deleteTeam()">Delete</button>
-  <button class="btn btn-block btn-default col-sm-6" ui-sref="poolDetail({poolId: matchEditCtrl.match.poolId})">Cancel</button>
+  <table class="table">
+    <tr>
+      <td colspan="2">
+        <div class="checkbox">
+          <label><input type="checkbox" ng-model="matchEditCtrl.match.isComplete" value="">Match Complete</label>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button class="btn btn-full btn-success" ng-click="matchEditCtrl.saveMatch()">Save</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button class="btn btn-full btn-danger" ng-click="matchEditCtrl.deleteMatch()">Delete</button>
+      </td>
+      <td>
+        <button class="btn btn-full btn-default" ui-sref="poolDetail({poolId: matchEditCtrl.match.poolId})">Cancel</button>
+      </td>
+    </tr>
+  </table>
 </div>
 

@@ -5,11 +5,11 @@
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('/assets/fonts/bootstrap/glyphicons-halflings-regular.eot');
-  src: url('/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-  url('/assets/fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'),
-  url('/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'),
-  url('/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../assets/fonts/bootstrap/glyphicons-halflings-regular.eot');
+  src: url('../assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'),
+  url('../assets/fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('../assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 @import '~font-awesome/css/font-awesome.css';
@@ -20,11 +20,11 @@
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url('/assets/fonts/font-awesome/fontawesome-webfont.eot?v=4.1.0');
-  src: url('/assets/fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
-  url('/assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.1.0') format('woff'),
-  url('/assets/fonts/font-awesome/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
-  url('/assets/fonts/font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+  src: url('../assets/fonts/font-awesome/fontawesome-webfont.eot?v=4.1.0');
+  src: url('../assets/fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
+  url('../assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.1.0') format('woff'),
+  url('../assets/fonts/font-awesome/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
+  url('../assets/fonts/font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -48,6 +48,7 @@
 @import 'main/main.css';
 @import 'matchEdit/matchEdit.css';
 @import 'pools/pools.css';
+@import 'teamDetail/teamDetail.css';
 @import 'teams/teams.css';
 @import '../components/footer/footer.css';
 @import '../components/modal/modal.css';

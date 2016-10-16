@@ -26,34 +26,18 @@ Team.find({}).remove()
 Pool.find({}).remove()
   .then(() => {
     Pool.create({
-      name: 'Pool 1'
+      name: 'Red - Court 1'
     }, {
-      name: 'Pool 2'
+      name: 'Black - Court 2'
+    }, {
+      name: 'White - Court 3'
     });
   });
 
 Match.find({}).remove()
   .then(() => {
     Match.create({
-      team1Id: 'team1Id',
-      team2Id: 'team2Id',
-      time: '3:00',
-      poolId: 'poolId',
-      sets: [{team1Score: 25, team2Score: 21, order: 1}, {team1Score: 19, team2Score: 25, order: 2}, {
-        team1Score: 25,
-        team2Score: 23,
-        order: 3
-      }]
-    }, {
-      team1Id: 'blah',
-      team2Id: 'blrh',
-      time: '4:00',
-      poolId: 'am',
-      sets: [{team1Score: 25, team2Score: 21, order: 1}, {team1Score: 19, team2Score: 25, order: 2}, {
-        team1Score: 25,
-        team2Score: 23,
-        order: 3
-      }]
+      poolId: ''
     });
   });
 

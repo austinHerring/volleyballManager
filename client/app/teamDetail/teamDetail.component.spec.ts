@@ -1,14 +1,14 @@
 'use strict';
 
-describe('Component: TeamEditComponent', function() {
+describe('Component: TeamDetailComponent', function() {
   // load the controller's module
-  beforeEach(module('volleyballManagerApp.teamEdit'));
+  beforeEach(module('volleyballManagerApp.teamDetail'));
 
-  var TeamEditComponent;
+  var TeamDetailComponent;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function($componentController) {
-    TeamEditComponent = $componentController('teamEdit', {});
+    TeamDetailComponent = $componentController('teamDetail', {});
   }));
 
   it('should ...', function() {

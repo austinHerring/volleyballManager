@@ -18,9 +18,9 @@ export class TeamAddComponent {
 
   addNewTeam() {
     if (this.newTeam) {
-      this.$http.post('/api/teams', this.newTeam );
-      this.newTeam = '';
-      this.$state.go('teams');
+      this.$http.post('/api/teams', this.newTeam ).then(response => {
+          this.$state.go('teams');
+      });
     }
   }
 }

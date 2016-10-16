@@ -13,16 +13,16 @@
     <div uib-collapse="$ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
         <li ng-repeat="item in $ctrl.menu" ui-sref-active="active">
-            <a ui-sref="{{item.state}}">{{item.title}}</a>
+            <a ui-sref="{{item.state}}" ng-click="$ctrl.isCollapsed=true">{{item.title}}</a>
         </li>
         <li ng-show="$ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li ui-sref-active="active"><a ui-sref="teams">Teams</a></li>
-        <li ui-sref-active="active"><a ui-sref="pools">Pools</a></li>
-        <li ui-sref-active="active"><a ui-sref="brackets">Brackets</a></li>
-        <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="logout">Logout</a></li>
+        <li ui-sref-active="active"><a ui-sref="teams" ng-click="$ctrl.isCollapsed=true">Teams</a></li>
+        <li ui-sref-active="active"><a ui-sref="pools" ng-click="$ctrl.isCollapsed=true">Pools</a></li>
+        <li ui-sref-active="active"><a ui-sref="brackets" ng-click="$ctrl.isCollapsed=true">Brackets</a></li>
+        <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="logout" ng-click="$ctrl.isCollapsed=true">Logout</a></li>
       </ul>
     </div>
   </div>

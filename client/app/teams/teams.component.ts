@@ -9,6 +9,7 @@ export class TeamsComponent {
   Auth;
   $http;
   teams = [];
+  matches = [];
   newTeam = '';
 
   /*@ngInject*/
@@ -16,9 +17,23 @@ export class TeamsComponent {
     this.$http = $http;
     this.Auth = Auth;
 
+    $http.get('/api/matches').then(response => {
+      this.matches = response.data;
+      for (let t of this.teams) {
+        this.setUpTeam(t);
+      }
+    });
+
     $http.get('/api/teams').then(response => {
       this.teams = response.data;
+      for (let t of this.teams) {
+        this.setUpTeam(t);
+      }
     });
+  }
+
+  setUpTeam(team) {
+    //team.rank = 11;
   }
 
   isLoggedIn() {

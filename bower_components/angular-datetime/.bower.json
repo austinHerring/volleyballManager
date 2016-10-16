@@ -1,0 +1,46 @@
+{
+  "name": "angular-datetime",
+  "version": "4.1.0",
+  "homepage": "https://github.com/eight04/angular-datetime",
+  "authors": [
+    "eight <eight04@gmail.com>"
+  ],
+  "description": "An angular directive which will auto format datetime string on text box.",
+  "moduleType": [
+    "globals"
+  ],
+  "main": [
+    "dist/datetime.js"
+  ],
+  "keywords": [
+    "angular",
+    "datetime",
+    "time",
+    "parser"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "example"
+  ],
+  "dependencies": {
+    "angular": "^1.2.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.2.0"
+  },
+  "_release": "4.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.1.0",
+    "commit": "09ab013d0761d2fc93a3b02af4b3d369d40426cd"
+  },
+  "_source": "https://github.com/eight04/angular-datetime.git",
+  "_target": "^4.1.0",
+  "_originalSource": "angular-datetime",
+  "_direct": true
+}

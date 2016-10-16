@@ -6,10 +6,12 @@ export default class Match {
   fetchTeam1: String;
   team2Id: String;
   fetchTeam2: String;
-  time: String;
+  refId: String;
+  fetchRef: String;
+  time: Date;
   poolId: String;
+  isComplete: Boolean;
   sets: {
-    order: Number,
     team1Score: Number,
     team2Score: Number
   };

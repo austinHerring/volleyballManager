@@ -1,58 +1,94 @@
 <div class="col-sm-12">
   <!-- Admin View -->
   <div ng-show="poolDetailCtrl.isLoggedIn()" class="col-sm-12">
-    <input class="col-sm-12 btn-block" type="text" placeholder="Name / Court #" ng-model="poolDetailCtrl.pool.name">
-    <input type="text" placeholder="Time" class="btn-block col-sm-12" ng-model="poolDetailCtrl.time">
 
-    <select ng-model="poolDetailCtrl.choice1" ng-options="team.name for team in poolDetailCtrl.unselectedTeams" class="btn-block col-sm-12" ng-change="poolDetailCtrl.update()">
-    </select>
 
-    <select ng-model="poolDetailCtrl.choice2" ng-options="team.name for team in poolDetailCtrl.unselectedTeams" class=" btn-block col-sm-12" ng-change="poolDetailCtrl.update()">
-    </select>
+    <div class="input-group">
+      <input class="col-sm-12 btn-block form-control" type="text" placeholder="Name / Court #" ng-model="poolDetailCtrl.pool.name">
+      <span class="input-group-btn">
+        <button class="btn btn-full btn-success" ng-click="poolDetailCtrl.savePoolName()">Save Name</button>
+      </span>
+    </div>
 
-    <button class="btn btn-block btn-primary" class="col-sm-12" ng-click="poolDetailCtrl.addNewMatch()">Add Match</button>
+    <table class="table">
+      <tbody>
+      <tr>
+        <td><button class="btn btn-full btn-danger" ng-click="poolDetailCtrl.deletePool()">Delete</button></td>
+        <td><button class="btn btn-full btn-default" ui-sref="pools">Back</button></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="btn-block" uib-timepicker ng-model="poolDetailCtrl.time"  hour-step="1" minute-step="5"></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <select ng-model="poolDetailCtrl.choiceRef" ng-options="team.name for team in poolDetailCtrl.unselectedTeams" class="matchEditTCell">
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <select ng-model="poolDetailCtrl.choice1" ng-options="team.name for team in poolDetailCtrl.unselectedTeams" class="matchEditTCell">
+          </select>
+        </td>
+        <td>
+          <select ng-model="poolDetailCtrl.choice2" ng-options="team.name for team in poolDetailCtrl.unselectedTeams" class="matchEditTCell">
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button class="btn btn-block btn-primary col-sm-12" ng-click="poolDetailCtrl.addNewMatch()">Add Match</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
 
     <table class="table">
       <tr ng-repeat="match in poolDetailCtrl.matches" ui-sref="matchEdit({matchId: match._id})">
-        <td style="padding-top:20px;padding-bottom:60px">
+        <td style="padding-top:10px;padding-bottom:10px">
+          <label class="btn-block" style="text-align: center">({{match.fetchRef}} is reffing)</label>
           <table class="table table-striped table-hover">
             <thead>
-            <th width="37.5%" class="text-right">{{match.fetchTeam1}}</th>
-            <th width="25%" class="text-center">{{match.time}}</th>
-            <th width="37.5%" class="text-left">{{match.fetchTeam2}}</th>
+            <th width="33%" class="text-right">{{match.fetchTeam1}}</th>
+            <th width="34%" class="text-center">{{match.time | date:'shortTime'}}</th>
+            <th width="33%" class="text-left">{{match.fetchTeam2}}</th>
             </thead>
             <tbody>
-            <tr colspan="3" ng-repeat="set in match.sets">
-              <td>{{set.team1Score}}   -   {{set.team2Score}}</td>
+            <tr ng-repeat="set in match.sets">
+              <td width="33%" class="text-right">{{set.team1Score}}</td>
+              <td width="34%" class="text-center"> - </td>
+              <td width="33%" class="text-left">{{set.team2Score}}</td>
             </tr>
+            </tbody>
           </table>
         </td>
       </tr>
     </table>
-
-    <button class="btn btn-block btn-success col-sm-12">Save All</button>
-    <button class="btn btn-block btn-danger col-sm-12">Delete Pool</button>
-    <button class="btn btn-block btn-default col-sm-6" ui-sref="pools">Back</button>
   </div>
 
   <!-- User View -->
   <div ng-hide="poolDetailCtrl.isLoggedIn()" class="col-sm-12">
     <h1  class="page-header">{{poolDetailCtrl.pool.name}}</h1>
 
-    <!--<img src="assets/images/logo.png" />-->
     <table class="table">
       <tr ng-repeat="match in poolDetailCtrl.matches">
-        <td style="padding-top:20px;padding-bottom:60px">
+        <td style="padding-top:10px;padding-bottom:10px">
+          <label class="btn-block" style="text-align: center">({{match.fetchRef}} is reffing)</label>
           <table class="table table-striped">
             <thead>
-            <th width="37.5%" class="text-right">{{match.fetchTeam1}}</th>
-            <th width="25%" class="text-center">{{match.time}}</th>
-            <th width="37.5%" class="text-left">{{match.fetchTeam2}}</th>
+            <th width="33%" class="text-right">{{match.fetchTeam1}}</th>
+            <th width="34%" class="text-center">{{match.time | date:'shortTime'}}</th>
+            <th width="33%" class="text-left">{{match.fetchTeam2}}</th>
             </thead>
             <tbody>
-            <tr colspan="3" ng-repeat="set in match.sets">
-              <td>{{set.team1Score}}   -   {{set.team2Score}}</td>
+            <tr ng-repeat="set in match.sets">
+              <td width="33%" class="text-right">{{set.team1Score}}</td>
+              <td width="34%" class="text-center"> - </td>
+              <td width="33%" class="text-left">{{set.team2Score}}</td>
             </tr>
+            </tbody>
           </table>
         </td>
       </tr>

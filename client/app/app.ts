@@ -19,7 +19,7 @@ import account from './account';
 import admin from './admin';
 import teams from './teams/teams.component';
 import teamAdd from './teamAdd/teamAdd.component';
-import teamEdit from './teamEdit/teamEdit.component';
+import teamDetail from './teamDetail/teamDetail.component';
 import pools from './pools/pools.component';
 import poolDetail from './poolDetail/poolDetail.component';
 import matchEdit from './matchEdit/matchEdit.component'
@@ -56,7 +56,7 @@ angular.module('volleyballManagerApp', [
 
   teams,
   teamAdd,
-  teamEdit,
+  teamDetail,
 
   brackets,
 

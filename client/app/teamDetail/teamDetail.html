@@ -1,0 +1,43 @@
+<div class="col-sm-12">
+  <h1 ng-hide="teamDetailCtrl.isLoggedIn()" class="page-header">{{teamDetailCtrl.team.name}}</h1>
+
+  <div ng-show="teamDetailCtrl.isLoggedIn()">
+    <div class="input-group">
+      <input type="text" placeholder="Team Name" class="form-control" ng-model="teamDetailCtrl.team.name">
+      <span class="input-group-btn">
+        <button class="btn btn-full btn-success col-sm-12" ng-click="teamDetailCtrl.saveTeam()">Save</button>
+    </span>
+    </div>
+
+    <table class="table">
+      <tbody>
+      <tr>
+        <td><button class="btn btn-block btn-danger" ng-click="teamDetailCtrl.deleteTeam()">Delete</button></td>
+        <td><button class="btn btn-block btn-default" ui-sref="teams">Back</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Your pool is '{{teamDetailCtrl.poolInvolved}}'</h4>
+
+  <table class="table">
+    <tr ng-repeat="appointment in teamDetailCtrl.appointments">
+      <td>
+        <table class="table table-striped">
+          <thead>
+            <th width="100%" class="text-left">{{appointment.time | date:'shortTime'}}: {{appointment.action}} {{appointment.fetchOpponent}}</th>
+          </thead>
+          <tbody>
+            <tr ng-repeat="set in appointment.sets">
+              <td class="text-center">{{set.ownScore}} - {{set.opponentScore}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td ng-hide="teamDetailCtrl.isLoggedIn()"><button class="btn btn-block btn-default" ui-sref="teams">Back</button></td>
+    </tr>
+  </table>
+</div>
