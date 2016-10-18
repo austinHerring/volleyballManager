@@ -81,7 +81,7 @@
     <h1  class="page-header">{{poolDetailCtrl.pool.name}}</h1>
 
     <table class="table">
-      <tr ng-repeat="match in poolDetailCtrl.matches">
+      <tr ng-repeat="match in poolDetailCtrl.matches | orderBy : 'time'">
         <td style="padding-top:10px;padding-bottom:10px">
           <label class="btn-block" style="text-align: center">@{{match.court}} ({{match.fetchRef}} is reffing)</label>
           <table class="table table-striped">

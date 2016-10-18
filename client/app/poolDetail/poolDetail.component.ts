@@ -54,6 +54,9 @@ export class PoolDetailComponent {
                 if (t._id == m.team2Id) {
                   m.fetchTeam2 = t.name;
                 }
+                if (t._id == m.refId) {
+                  m.fetchRef = t.name;
+                }
               }
               associatedMatches.push(m);
             }
