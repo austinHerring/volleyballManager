@@ -98,25 +98,6 @@ export class BracketsComponent {
     return 0;
   }
 
-  GenerateBrackets() {
-    var middle = 'tournaments/uga_volleyball_gold/participants/';
-    var json = JSON.stringify({participant: [{name: 'FUZZY'}, {name: 'WAZY'}]});
-    var req = this.API_PREFIX + middle + json;
-    //alert(this.API_PREFIX + middle + json);
-    //this.$http.post(req).then(response => alert(response.data));
-    //this.$http.get(this.API_PREFIX + 'tournaments.json').then(response => {
-    //   alert(response.data);
-    // });
-    // this.$http.get(this.API_PREFIX).then(response => {
-    //   alert(response.data);
-    // });
-    $.getJSON(this.API_PREFIX,
-      cs => {
-      alert(cs.data);
-        this.test = cs;
-      });
-  }
-
   toggleDisplay() {
     if (this.display) {
       this.display.isReady = !this.display.isReady;
