@@ -71,11 +71,51 @@ export class MatchEditComponent {
     if (this.match) {
       this.updateSets();
       this.updateTeams();
+
+      if (this.match.isComplete) {
+        this.$http.get('/api/teams/' + this.match.team1Id).then(response => {
+          var team1 = response.data;
+          this.updateTeamStats(team1);
+        });
+
+        this.$http.get('/api/teams/' + this.match.team2Id).then(response => {
+          var team2 = response.data;
+          this.updateTeamStats(team2);
+        });
+      }
+
       this.$http.put('/api/matches/' + this.match._id, this.match).then(response => {
           this.$state.go('poolDetail', {poolId: this.match.poolId});
       });
     }
   }
+
+  updateTeamStats(team) {
+    team.poolId = this.match.poolId;
+    var diff = 0;
+    for (let i = 0; i < this.points.length; i += 2) {
+      if (this.points[i] != null && this.points[i+1] != null) {
+        diff = this.points[i] - this.points[i + 1];
+        if (team._id == this.match.team1Id) {
+          team.pointDiff += diff;
+          if (diff > 0) {
+            team.teamIdsWon.push(this.match.team2Id);
+          } else if (diff < 0) {
+            team.teamIdsLost.push(this.match.team2Id);
+          }
+        } else if (team._id == this.match.team2Id) {
+          team.pointDiff -= diff;
+          if (diff < 0) {
+            team.teamIdsWon.push(this.match.team1Id);
+          } else if (diff > 0) {
+            team.teamIdsLost.push(this.match.team1Id);
+          }
+        }
+      }
+    }
+    this.$http.put('/api/teams/' + team._id, team);
+  }
+
 
   updateSets() {
     var sets = [];

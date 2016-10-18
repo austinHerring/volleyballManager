@@ -1,2 +1,50 @@
-<button class="btn form-control btn-gold" ng-click="poolDetailCtrl.deletePool()">Gold</button>
-<button class="btn form-control btn-silver" ng-click="poolDetailCtrl.deletePool()">Silver</button>
+<div class="col-md-12">
+  <h1 class="page-header">Brackets</h1>
+  <table ng-show="bracketsCtrl.isLoggedIn()" class="table table-striped">
+    <thead>
+      <th>Gold Team Seeds</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="team in bracketsCtrl.rankedGoldTeams">
+        <td>{{team.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table ng-show="bracketsCtrl.isLoggedIn()" class="table table-striped">
+    <thead>
+    <th>Silver Team Seeds</th>
+    </thead>
+    <tbody>
+    <tr ng-repeat="team in bracketsCtrl.rankedSilverTeams">
+      <td>{{team.name}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div ng-show="bracketsCtrl.isLoggedIn()" class="checkbox">
+    <button class="btn form-control btn-info" ng-click="bracketsCtrl.GenerateBrackets()">Generate Brackets!</button>
+    <label><input type="checkbox" ng-model="bracketsCtrl.isReady" ng-click="bracketsCtrl.toggleDisplay()" value="">Show Brackets To Public</label>
+  </div>
+
+  <div ng-show="bracketsCtrl.isDisplayReady()">
+    <p>Congratulations on your performance. After selecting a bracket, click on each match to see:
+    <ul>
+      <li>Scores</li>
+      <li>Where the match is</li>
+      <li>Who referees the match</li>
+    </ul>
+    Good Luck!
+    </p>
+
+    <button class="btn btn-block btn-gold" ui-sref="bracketGold">Gold</button>
+    <button class="btn btn-block btn-silver" ui-sref="bracketSilver">Silver</button>
+  </div>
+  <div ng-hide="bracketsCtrl.isDisplayReady()">
+    <p>
+      The brackets are not ready yet.
+    </p>
+    <p>
+      Check back in a little bit!
+    </p>
+  </div>
+</div>

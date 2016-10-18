@@ -8,7 +8,7 @@ import routes from './teamAdd.routes';
 export class TeamAddComponent {
   $http;
   $state;
-  newTeam = '';
+  newTeam;
 
   /*@ngInject*/
   constructor($http, $state) {
@@ -18,6 +18,9 @@ export class TeamAddComponent {
 
   addNewTeam() {
     if (this.newTeam) {
+      this.newTeam.pointDiff = 0;
+      this.newTeam.teamIdsWon = [];
+      this.newTeam.teamIdsLost = []
       this.$http.post('/api/teams', this.newTeam ).then(response => {
           this.$state.go('teams');
       });

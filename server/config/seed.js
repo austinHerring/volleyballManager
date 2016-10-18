@@ -13,24 +13,41 @@ Team.find({}).remove()
   .then(() => {
     Team.create({
       name: 'GT',
-      rank: 1
+      pointDiff: 0
     }, {
       name: 'UGA',
-      rank: 2
+      pointDiff: 0
     }, {
       name: 'TENN',
-      rank: 3
+      pointDiff: 0,
+    }, {
+      name: 'BYU',
+      pointDiff: 0,
+    }, {
+      name: 'USC',
+      pointDiff: 0,
+    }, {
+      name: 'MICH',
+      pointDiff: 0,
+    }, {
+      name: 'GCSU',
+      pointDiff: 0,
+    }, {
+      name: 'Purdue',
+      pointDiff: 0,
     });
   });
 
 Pool.find({}).remove()
   .then(() => {
     Pool.create({
-      name: 'Red - Court 1'
+      name: 'Pool A - Court 1'
     }, {
-      name: 'Black - Court 2'
+      name: 'Pool B - Court 2'
     }, {
-      name: 'White - Court 3'
+      name: 'Pool C - Court 3'
+    }, {
+      name: 'Pool D - Court 4'
     });
   });
 

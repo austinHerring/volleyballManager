@@ -3,10 +3,9 @@ export default class Team {
 
   _id: String;
   name: String;
-  rank: Number;
   poolId: String;
   teamIdsWon: [String];
   teamIdsLost: [String];
-  teamIdsTie: [String];
+  pointDiff: Number;
   matchIds: [String]
 }

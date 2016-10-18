@@ -44,7 +44,9 @@
 /* Component styles are injected through gulp */
 /* inject:css */
 @import 'admin/admin.css';
+@import 'bracketGold/bracketGold.css';
 @import 'brackets/brackets.css';
+@import 'bracketSilver/bracketSilver.css';
 @import 'main/main.css';
 @import 'matchEdit/matchEdit.css';
 @import 'pools/pools.css';

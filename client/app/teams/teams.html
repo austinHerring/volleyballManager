@@ -4,12 +4,12 @@
   <table class="table table-striped table-hover"">
     <thead>
       <th>Name</th>
-      <th>Record (W-L-T)</th>
+      <th>W - L (Sets)</th>
     </thead>
     <tbody>
-      <tr ng-repeat="team in teamsCtrl.teams" ui-sref="teamDetail({teamId: team._id})">
+      <tr ng-repeat="team in teamsCtrl.teams | orderBy : 'name'" ui-sref="teamDetail({teamId: team._id})">
         <td>{{team.name}}</td>
-        <td>{{team.teamIdsWon.length}} - {{team.teamIdsLost.length}} - {{team.teamIdsTie.length}}</td>
+        <td>{{team.teamIdsWon.length}} - {{team.teamIdsLost.length}}</td>
       </tr>
     </tbody>
   </table>

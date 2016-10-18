@@ -24,6 +24,8 @@ import pools from './pools/pools.component';
 import poolDetail from './poolDetail/poolDetail.component';
 import matchEdit from './matchEdit/matchEdit.component'
 import brackets from './brackets/brackets.component';
+import bracketGold from './bracketGold/bracketGold.component';
+import bracketSilver from './bracketSilver/bracketSilver.component';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
 import main from './main/main.component';
@@ -59,6 +61,8 @@ angular.module('volleyballManagerApp', [
   teamDetail,
 
   brackets,
+  bracketGold,
+  bracketSilver,
 
   constants,
 

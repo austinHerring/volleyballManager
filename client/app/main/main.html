@@ -15,22 +15,24 @@
         </ul>
       </p>
       <p>
-        In 'Pools' you can find the lineup and scores of each match
+        In 'Pools' you can find the lineup and scores of each match.
       </p>
       <p>
-        In 'Brackets' you can see the teams in the gold and silver bracket. This will be updated as more games are played
+        In 'Brackets' you can find the lineup for the gold and silver bracket. This will be updated after all pool matches have played.
       </p>
 
       <h1 class="page-header">Statistics</h1>
-      <p>
-        Total Points Today: {{totalPoints}}
-      </p>
-      <p>
-        Total Matches Today: {{totalMatches}}
-      </p>
-      <p>
-        Team with larget net points: {{totalMatches}}
-      </p>
+      <div>
+        <p>
+          Total Points Today: {{MainCtrl.totalPoints}}
+        </p>
+        <p>
+          Matches Completed Today: {{MainCtrl.completedMatches}}
+        </p>
+        <p>
+          Team(s) with highest point differential: {{MainCtrl.bestDiffTeam}}
+        </p>
+      </div>
     </div>
   </div>
 </div>

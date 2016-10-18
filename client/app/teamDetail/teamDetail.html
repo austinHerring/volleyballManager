@@ -1,5 +1,6 @@
 <div class="col-sm-12">
   <h1 ng-hide="teamDetailCtrl.isLoggedIn()" class="page-header">{{teamDetailCtrl.team.name}}</h1>
+  <h1 ng-show="teamDetailCtrl.isLoggedIn()" class="page-header">Admin Edit</h1>
 
   <div ng-show="teamDetailCtrl.isLoggedIn()">
     <div class="input-group">
@@ -22,7 +23,7 @@
   <h4>Your pool is '{{teamDetailCtrl.poolInvolved}}'</h4>
 
   <table class="table">
-    <tr ng-repeat="appointment in teamDetailCtrl.appointments">
+    <tr ng-repeat="appointment in teamDetailCtrl.appointments | orderBy : 'time'">
       <td>
         <table class="table table-striped">
           <thead>
