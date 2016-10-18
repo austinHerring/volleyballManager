@@ -7,6 +7,11 @@
     <tbody>
     <tr>
       <td colspan="2">
+        <input class="col-sm-12 btn-block form-control" type="text" placeholder="New Location" ng-model="matchEditCtrl.match.court">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
         <select ng-init="matchEditCtrl.choiceRef = matchEditCtrl.choiceRef" ng-model="matchEditCtrl.choiceRef" ng-options="team.name for team in matchEditCtrl.allTeams | orderBy : 'name'" class="form-control">
         </select>
       </td>

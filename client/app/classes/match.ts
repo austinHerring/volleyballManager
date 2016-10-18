@@ -10,6 +10,7 @@ export default class Match {
   fetchRef: String;
   time: Date;
   poolId: String;
+  court: String;
   isComplete: Boolean;
   sets: {
     team1Score: Number,

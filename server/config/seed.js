@@ -41,13 +41,13 @@ Team.find({}).remove()
 Pool.find({}).remove()
   .then(() => {
     Pool.create({
-      name: 'Pool A - Court 1'
+      name: 'Pool A'
     }, {
-      name: 'Pool B - Court 2'
+      name: 'Pool B'
     }, {
-      name: 'Pool C - Court 3'
+      name: 'Pool C'
     }, {
-      name: 'Pool D - Court 4'
+      name: 'Pool D'
     });
   });
 

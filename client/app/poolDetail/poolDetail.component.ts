@@ -23,6 +23,7 @@ export class PoolDetailComponent {
   choice1;
   choice2;
   choiceRef;
+  court = '';
   time = new Date(this.defaultDateTime);
 
   /*@ngInject*/
@@ -78,6 +79,7 @@ export class PoolDetailComponent {
       newMatch.refId = this.choiceRef._id;
       newMatch.fetchRef = this.choiceRef.name;
       newMatch.poolId = this.pool._id;
+      newMatch.court = this.court;
 
       this.$http.post('/api/matches', newMatch ).then(response => {
         this.matches.push(newMatch);

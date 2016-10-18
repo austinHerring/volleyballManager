@@ -5,6 +5,7 @@ import routing from './main.routes';
 export class MainController {
   $http;
   totalPoints = 0;
+  totalTeams = 0;
   completedMatches = 0;
   bestDiffTeam = '';
 
@@ -35,16 +36,18 @@ export class MainController {
     });
 
     this.$http.get('/api/teams').then(response => {
+      var teams = response.data;
+      this.totalTeams = teams.length;
       var bestDiff = 0;
       var bestDiffTeam = '';
-      for (let t of response.data) {
+      for (let t of teams) {
         if (t.pointDiff > bestDiff) {
           bestDiff = t.pointDiff;
           bestDiffTeam = t.name;
         }
       }
 
-      for (let t of response.data) {
+      for (let t of teams) {
         if (t.pointDiff == bestDiff && bestDiff != 0) {
           this.bestDiffTeam += (this.bestDiffTeam) ? ', ' + t.name : t.name;
         }

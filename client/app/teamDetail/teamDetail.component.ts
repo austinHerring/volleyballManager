@@ -47,6 +47,7 @@ export class TeamDetailComponent {
             }
 
             newAppointment.time = m.time;
+            newAppointment.court = m.court;
             this.poolInvolvedId = m.poolId;
             this.appointments.push(newAppointment);
             this.$http.get('/api/pools/' + this.poolInvolvedId).then(response => {

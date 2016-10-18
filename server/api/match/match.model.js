@@ -12,6 +12,7 @@ var MatchSchema = new mongoose.Schema({
   time: Date,
   poolId: String,
   isComplete: Boolean,
+  court: String,
   sets: {
     team1Score: Number,
     team2Score: Number

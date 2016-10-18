@@ -27,7 +27,7 @@
       <td>
         <table class="table table-striped">
           <thead>
-            <th width="100%" class="text-left">{{appointment.time | date:'shortTime'}}: {{appointment.action}} {{appointment.fetchOpponent}}</th>
+            <th width="100%" class="text-left">{{appointment.time | date:'shortTime'}}: {{appointment.action}} {{appointment.fetchOpponent}} @ {{appointment.court}}</th>
           </thead>
           <tbody>
             <tr ng-repeat="set in appointment.sets">
