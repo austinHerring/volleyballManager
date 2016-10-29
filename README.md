@@ -1,28 +1,6 @@
-# volleyball-manager
+# Volleyball Manager
+This is my first Web App! It was built using the MEAN Fullstack framework.
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.1.0.
+It features an Admin Console which allows the tournament head to create the teams, pools, initial match information, and fill out the scores as the day progresses. In view mode, the teams can view their current record, when they play, who they play, and where they play. Not only this, but they can view other teams and their performances along with their own pool matches. After pool play has finished, the scores are run though an algorithm to rank the teams and place them into the bracket with the according seed.
 
-## Getting Started
-
-### Prerequisites
-
-- [Git](https://git-scm.com/)
-- [Node.js and npm](nodejs.org) Node >= 4.x.x, npm >= 2.x.x
-- [Gulp](http://gulpjs.com/) (`npm install --global gulp`)
-- [MongoDB](https://www.mongodb.org/) - Keep a running daemon with `mongod`
-
-### Developing
-
-1. Run `npm install` to install server dependencies.
-
-2. Run `mongod` in a separate shell to keep an instance of the MongoDB Daemon running
-
-3. Run `gulp serve` to start the development server. It should automatically open the client in your browser when ready.
-
-## Build & development
-
-Run `gulp build` for building and `gulp serve` for preview.
-
-## Testing
-
-Running `npm test` will run the unit tests with karma.
+This app not only saved time for the tournament administrator, but it allowed players and remote family members to track the progress of the tournament remotely. Throughout the day, their were over 300 unique users!
